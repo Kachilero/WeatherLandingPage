@@ -1,0 +1,23 @@
+/**
+Main Styles file
+All imports should be into this file
+*/
+
+@import "scss/variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+header {
+  background-color: $dark-bluegray;
+
+  .row {
+    width: 100%;
+  }
+}
+
+.example {
+  margin-bottom: 3rem;
+
+  &--img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+.jumbotron {
+
+  .weather {
+    &--city {
+      img.warning {
+        width: 51px;
+        height: 51px;
+      }
+    }
+  }
+}

@@ -9,6 +9,66 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <header class="navbar navbar-expand navbar-dark flex-column flex-md-row">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <a class="navbar-brand mr-0 mr-md-2" href="/">Ample Weather</a>
+        </div>
+        <div class="col-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter Zip Code for Local Weather">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary">Go</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container main-container">
+    <app-current-weather></app-current-weather>
+
+    <div class="row align-items-center justify-content-center">
+      <div class="col-10">
+        <p class="cta text-center">Enjoy all of these great benefits when you sign up</p>
+      </div>
+    </div>
+    <div class="row align-items-center example">
+      <div class="col-4">
+        <img src="assets/img/7_day_example.png" class="example--img">
+      </div>
+      <div class="col-7">
+        <h2 class="example--title text-center">7 Day Forecast</h2>
+        <p class="example--copy">With Amply Weather’s accurate 7 day forecast you will be able to know just what to expect for the week ahead. Our super-accurate forecasting algorithym ensures that severe weather never sneaks up to you again by employing secret Russian weather manipulation technology.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center example">
+      <div class="col-4">
+        <img src="assets/img/7_day_example.png" class="example--img">
+      </div>
+      <div class="col-7">
+        <h2 class="example--title text-center">Hourly Breakdowns</h2>
+        <p class="example--copy">With Amply Weather’s accurate 7 day forecast you will be able to know just what to expect for the week ahead. Our super-accurate forecasting algorithym ensures that severe weather never sneaks up to you again by employing secret Russian weather manipulation technology.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center example">
+      <div class="col-4">
+        <img src="assets/img/7_day_example.png" class="example--img">
+      </div>
+      <div class="col-7">
+        <h2 class="example--title text-center">Daily Wake Up Call</h2>
+        <p class="example--copy">With Amply Weather’s accurate 7 day forecast you will be able to know just what to expect for the week ahead. Our super-accurate forecasting algorithym ensures that severe weather never sneaks up to you again by employing secret Russian weather manipulation technology.</p>
+      </div>
+    </div>
+
+    <app-sign-up-form></app-sign-up-form>
+
+  </div>
+
   <app-root></app-root>
 </body>
 </html>
