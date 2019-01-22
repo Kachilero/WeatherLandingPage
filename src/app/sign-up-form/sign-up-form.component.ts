@@ -16,7 +16,7 @@ export class SignUpFormComponent implements OnInit {
 
   get diagnostic() { return JSON.stringify(this.model); }
   model = new User(
-    64111,
+    '',
     false,
   );
   submitted = false;
