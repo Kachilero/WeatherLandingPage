@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +12,6 @@ import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent,
     CurrentWeatherComponent,
     SignUpFormComponent,
     ExampleComponent,
@@ -30,7 +28,6 @@ import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgbActiveModal
   ],
   bootstrap: [
-    AppComponent,
     CurrentWeatherComponent,
     SignUpFormComponent
   ],
