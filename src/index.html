@@ -19,7 +19,7 @@
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Enter Zip Code for Local Weather">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" onclick="document.location+='#terms'">Go</button>
+              <button class="btn btn-outline-secondary" onclick="goToAnchor('terms')">Go</button>
             </div>
           </div>
         </div>
@@ -73,5 +73,14 @@
   <footer class="page-footer">
     <div class="footer-copyright text-center py-3">&copy; 2019 Copyright Alejandro Cerro</div>
   </footer>
+
+  <script>
+    // Adding a simple function to remove the URL hash
+    function goToAnchor(anchor) {
+      var loc = document.location.toString().split('#')[0];
+      document.location = loc + '#' + anchor;
+      return false;
+    }
+  </script>
 </body>
 </html>
