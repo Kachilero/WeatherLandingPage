@@ -4,13 +4,15 @@
  * @var email string - user email
  * @var zip number - the users zip code
  * @var accepted boolean - has accepted the term of service
+ * @var loggedIn boolean - logged in or not
  * */
 
 export class User {
   constructor(
-    public id: number,
-    public email: string,
     public zip: number,
-    public accepted: boolean
+    public accepted: boolean,
+    public id?: number,
+    public email?: string,
+    public loggedIn?: boolean
   ) {}
 }

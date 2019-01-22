@@ -16,12 +16,12 @@ export class Weather {
   constructor(
     public city: string,
     public state: string,
-    public currTemp: number,
-    public hiTemp: number,
-    public lowTemp: number,
+    public currTemp: string,
+    public hiTemp: string,
+    public lowTemp: string,
     public currIcon: string,
     public description: string,
-    public zip: number,
+    public zip: string,
     public alerts: boolean,
     public warnings: string
   ) {}
