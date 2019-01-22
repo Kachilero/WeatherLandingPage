@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TermsAndConditionsComponent } from '../terms-and-conditions/terms-and-conditions.component';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -9,7 +12,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 
 export class SignUpFormComponent implements OnInit {
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
 
   get diagnostic() { return JSON.stringify(this.model); }
   model = new User(
@@ -25,15 +28,19 @@ export class SignUpFormComponent implements OnInit {
       ]),
       'zip': new FormControl(this.model.zip, [
         Validators.required,
-        Validators.minLength(5),
+        // Validators.minLength(5),
         Validators.maxLength(5)
       ]),
       'accepted': new FormControl(this.model.accepted, [
-        Validators.required,
+        // Validators.required,
         Validators.requiredTrue
       ]),
       'loggedIn': new FormControl(this.model.loggedIn)
     });
+  }
+  open() {
+    const modalRef = this.modalService.open(TermsAndConditionsComponent);
+    modalRef.componentInstance.title = 'Terms & Conditions';
   }
   onSubmit() { this.submitted = true; }
   newUser() {

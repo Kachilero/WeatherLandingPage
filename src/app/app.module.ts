@@ -7,25 +7,36 @@ import { CurrentWeatherComponent } from './current-weather/current-weather.compo
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExampleComponent } from './example/example.component';
+import { ModalComponent } from './modal/modal.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrentWeatherComponent,
     SignUpFormComponent,
-    ExampleComponent
+    ExampleComponent,
+    ModalComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    NgbActiveModal
+  ],
   bootstrap: [
     AppComponent,
     CurrentWeatherComponent,
     SignUpFormComponent
   ],
+  entryComponents: [
+    TermsAndConditionsComponent
+  ]
   // exports: [CurrentWeatherComponent]
 })
 export class AppModule { }

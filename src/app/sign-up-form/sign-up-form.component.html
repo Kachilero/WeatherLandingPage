@@ -24,7 +24,8 @@
         <input type="checkbox" class="form-check-input" id="accept"
                 required
                 [(ngModel)]="model.accepted" name="accepted">
-        <label class="form-check-label" for="accept">Please accept the Terms of Use</label>
+        <label class="form-check-label" for="accept">Please accept the <a href="#terms" (click)="open()">Terms & Conditions</a> </label>
+        <a name="terms"></a>
       </div>
 
       <button
