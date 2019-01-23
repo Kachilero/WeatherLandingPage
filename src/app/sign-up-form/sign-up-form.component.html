@@ -9,22 +9,32 @@
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email"
                placeholder="Email"
-                [(ngModel)]="model.email" name="email">
+                [(ngModel)]="model.email" name="email"
+                #email="ngModel"
+                [ngClass]="{ 'is-invalid': signUpForm.submitted && email.invalid }" email>
+      </div>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div>Please enter a valid email.</div>
       </div>
 
       <div class="form-group">
-        <label for="zip">ZIP</label>
-        <input type="number" class="form-control" id="zip"
+        <label for="zip">Zip Code (required)</label>
+        <input type="text" class="form-control" id="zip"
+               maxlength="5"
                required
+               pattern="[0-9]"
                placeholder="Zip Code"
                 [(ngModel)]="model.zip" name="zip">
       </div>
+      <div *ngIf="zip.invalid && (zip.dirty || zip.touched)" class="alert-danger alert">
+        <div *ngIf="zip.errors.required">Zip Code is required</div>
+      </div>
 
       <div class="form-group">
-        <input type="checkbox" class="form-check-input" id="accept"
+        <input type="checkbox" class="form-check-input" id="accepted"
                 required
                 [(ngModel)]="model.accepted" name="accepted">
-        <label class="form-check-label" for="accept">Please accept the <a href="#terms" (click)="open()">Terms & Conditions</a> </label>
+        <label class="form-check-label" for="accepted">Please accept the <a href="#terms" (click)="open()">Terms & Conditions (required)</a> </label>
         <a name="terms"></a>
       </div>
 
