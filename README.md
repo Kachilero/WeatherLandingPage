@@ -1,6 +1,31 @@
 # WeatherLandingPage
 
+## Current Progresss
+
+Tracking the progress of the technical requirements
+
+1. 80% - Using bootstrap shortcuts this
+2. 100% - Both are required before form can be submitted
+3. 25% - Sign up fires but is not "tracked"
+4. 0% - Documentation has not started
+5. 100% - All required fields are displayed
+
+This projects objective is to create a weather landing page that will get people to sign up for a service.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+
+## Technical Requirements
+
+1. It should be responsive
+2. ZIP code and acceptance of the terms of service are mandatory
+3. Track clicks of sign up
+4. Document any design or functionality decision made to maximize conversion
+5. The page needs to pull information from an API and display the following information:
+    - The user's city and state.
+    - The current temperature
+    - The high and low temperature
+    - An icon of the current weather conditions
+    - A short description of the weather conditions
 
 ## Development server
 
