@@ -21,14 +21,13 @@ export class CurrentWeatherComponent implements OnInit {
     '--',
     '--',
     '--',
-    '--',
+    '#',
      '--',
      '--',
     false,
     '--'
   );
   ngOnInit() {
-    console.log('OnInit');
     this.showConfigResponse();
   }
   clear() {
@@ -58,7 +57,8 @@ export class CurrentWeatherComponent implements OnInit {
         this.currCityWeather.description = this.config.today['description'];
         this.currCityWeather.zip = '64111'; // Faking it
         this.currCityWeather.alerts = (Number(this.config.today['activeAlerts']) > 0);
-        this.currCityWeather.warnings = this.config.alerts['watch'][0]['description'];
+        // If activeAlerts is false, set warnings to an empty string.
+        this.currCityWeather.warnings =  (this.currCityWeather.alerts)? this.config.alerts['watch'][0]['description'] : '';
       });
   }
 }

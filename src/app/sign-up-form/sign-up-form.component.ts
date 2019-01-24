@@ -10,17 +10,24 @@ import { TermsAndConditionsComponent } from '../terms-and-conditions/terms-and-c
   templateUrl: './sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.scss']
 })
+// @injectable()
 
 export class SignUpFormComponent implements OnInit {
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+  ) {}
 
-  get diagnostic() { return JSON.stringify(this.model); }
-  model = new User(
-    '',
-    false,
-  );
-  submitted = false;
+  model = {
+    'zip': '',
+    'accepted': false,
+    'id': '',
+    'email': '',
+    'loggedIn': false,
+    'submitted': false
+  };
   signUpForm;
+  userArray: Array<object> = [];
+  numberOfClicks = 0;
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
       'email': new FormControl(this.model.email, [
@@ -34,20 +41,29 @@ export class SignUpFormComponent implements OnInit {
       'accepted': new FormControl(this.model.accepted, [
         // Validators.required,
         Validators.requiredTrue
-      ]),
-      'loggedIn': new FormControl(this.model.loggedIn)
+      ])
     });
   }
   open() {
     const modalRef = this.modalService.open(TermsAndConditionsComponent);
     modalRef.componentInstance.title = 'Terms & Conditions';
   }
-  onSubmit() { this.submitted = true; }
   newUser() {
-    this.model.email = this.email;
-    console.log(`Form Submitted: email: ${this.email}`);
-    console.table(this.model);
-    console.log(`Submitted?: ${this.submitted}`);
+    // Now we'll create a new User then push it to the userArray
+    // and increment number of clicks
+    this.numberOfClicks++;
+    const user = new User(
+      this.model.zip,
+      this.model.accepted,
+      (this.numberOfClicks).toString(),
+      this.model.email,
+      this.model.loggedIn
+    );
+    this.userArray.push(user);
+    // Logging
+    console.log(`Number of Clicks: ${this.numberOfClicks}`);
+    console.log('User Array');
+    console.log(this.userArray);
   }
 
   // Getters

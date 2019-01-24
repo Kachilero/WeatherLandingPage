@@ -11,7 +11,7 @@ export class User {
   constructor(
     public zip: string,
     public accepted: boolean,
-    public id?: number,
+    public id?: string,
     public email?: string,
     public loggedIn?: boolean
   ) {}
