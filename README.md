@@ -4,9 +4,9 @@
 
 Tracking the progress of the technical requirements
 
-1. 80% - Using bootstrap shortcuts this
+1. 100% - Using bootstrap shortcuts this
 2. 100% - Both are required before form can be submitted
-3. 25% - Sign up fires but is not "tracked"
+3. 100% - Sign up fires and gets logged in the console
 4. 0% - Documentation has not started
 5. 100% - All required fields are displayed
 
