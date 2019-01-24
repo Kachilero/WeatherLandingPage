@@ -8,7 +8,7 @@ import { TermsAndConditionsComponent } from '../terms-and-conditions/terms-and-c
 @Component({
   selector: 'app-sign-up-form',
   templateUrl: './sign-up-form.component.html',
-  styleUrls: ['./sign-up-form.component.scss']
+  styleUrls: ['../../scss/components/sign-up-form.component.scss']
 })
 // @injectable()
 

@@ -6,7 +6,7 @@ import { Config, ConfigService } from '../config/config.service';
   selector: 'app-current-weather',
   templateUrl: './current-weather.component.html',
   providers: [ ConfigService ],
-  styleUrls: ['./current-weather.component.scss']
+  styleUrls: ['../../scss/components/current-weather.component.scss']
 })
 export class CurrentWeatherComponent implements OnInit {
   constructor(private configService: ConfigService) {}
