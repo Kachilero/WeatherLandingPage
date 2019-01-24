@@ -2,16 +2,27 @@
   <div class="col-md-12">
     <div class="jumbotron row">
       <div class="col-md-5">
-        <div class="weather weather--city">
-          <h2 class="display-4 d-inline">{{currCityWeather.city}}</h2>
-          <a *ngIf="currCityWeather.alerts === true" href="#" data-toggle="tooltip" data-html="true" title="3 warnings  Click to see">
+        <div class="weather weather--city col-11 mx-auto">
+          <h2 class="weather--city--title d-inline">{{currCityWeather.city}}, MO</h2>
+
+          <a href="#terms" data-toggle="tooltip" data-html="true" title="3 warnings  Click to see">
+            <img src="../assets/img/warning.svg" alt="Warnings in your area" class="d-inline warning">
+          </a>
+
+          <a *ngIf="currCityWeather.alerts === true" href="#terms" data-toggle="tooltip" data-html="true" title="3 warnings  Click to see">
             <img src="../assets/img/warning.svg" alt="Warnings in your area" class="d-inline warning">
           </a>
         </div>
-        <img src={{currCityWeather.currIcon}} alt="Current Conditions Image" class="d-inline">
-        <p class="d-inline weather--condition">{{currCityWeather.description}}</p>
-        <p class="weather--temp--main">{{currCityWeather.currTemp}}<span>&#8457;</span></p>
-        <p class="weather--temp--lo-hi">{{currCityWeather.hiTemp}} &#8457; | {{currCityWeather.lowTemp}} &#8457;</p>
+
+        <div class="weather--conditions col-6 mx-auto">
+          <img src={{currCityWeather.currIcon}} alt="Current Conditions Image" class="d-inline">
+          <p class="d-inline weather--condition">{{currCityWeather.description}}</p>
+        </div>
+
+        <p class="weather--temp--main col-8 mx-auto">{{currCityWeather.currTemp}}<span>&#8457;</span></p>
+        <div class="weather--temp col-8 mx-auto">
+          <p class="weather--temp--lo-hi">{{currCityWeather.hiTemp}} &#8457; | {{currCityWeather.lowTemp}} &#8457;</p>
+        </div>
       </div>
       <div class="col-md-7">
         <h2 class="display-12">Never get caught out in the rain again!</h2>
